@@ -3,212 +3,720 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chandler Thomas — Network Engineer focused on network operations, infrastructure, troubleshooting, monitoring, and enterprise connectivity." />
   <title>Chandler Thomas | Network Engineer</title>
+
   <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --panel: #0e1b2e;
+      --panel-2: #111f34;
+      --text: #e8eef7;
+      --muted: #9aabc0;
+      --line: #203149;
+      --accent: #5cc8ff;
+      --accent-2: #8be0ff;
+      --success: #62d7a2;
+      --max: 1120px;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(92, 200, 255, 0.10), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #081423 100%);
+      color: var(--text);
+      line-height: 1.65;
     }
-    header {
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #020617, #020617);
-      text-align: center;
+
+    a { color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 31, 0.84);
+      border-bottom: 1px solid rgba(32, 49, 73, 0.8);
     }
-    h2 {
-      color: #38bdf8;
-      margin-top: 3rem;
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .card {
-      background: #020617;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    a {
-      color: #38bdf8;
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
       text-decoration: none;
-      font-weight: 500;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.92rem;
+      color: var(--muted);
     }
-    footer {
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    header {
+      padding: 110px 0 90px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 16px rgba(98, 215, 162, 0.45);
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 18px 0 18px;
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-title {
+      color: var(--accent);
+    }
+
+    .hero-copy {
+      max-width: 750px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .button.primary {
+      color: #04111d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    section { padding: 82px 0; }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 7px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(17, 31, 52, 0.96), rgba(10, 23, 40, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .skill-card ul,
+    .experience ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .skill-card li,
+    .experience li { margin-bottom: 6px; }
+
+    .skill-label {
+      display: inline-block;
+      color: var(--text);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 0.85fr 1.5fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .featured {
+      position: relative;
+      overflow: hidden;
+      border-color: rgba(92, 200, 255, 0.42);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(92, 200, 255, 0.13), transparent 36%),
+        linear-gradient(145deg, #102238, #0a1728);
+    }
+
+    .featured::after {
+      content: "FEATURED";
+      position: absolute;
+      top: 18px;
+      right: -36px;
+      transform: rotate(36deg);
+      padding: 4px 42px;
+      background: var(--accent);
+      color: #061321;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 16px 0;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.025);
+      color: #c9d6e5;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.76rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      margin-top: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .method {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+
+    .method-step {
+      padding: 17px 12px;
       text-align: center;
-      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    .method-step strong {
+      display: block;
+      margin-bottom: 4px;
       font-size: 0.9rem;
-      color: #94a3b8;
+    }
+
+    .method-step span {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .status {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    .status strong { display: block; margin-bottom: 3px; }
+    .status span { color: var(--muted); font-size: 0.88rem; }
+
+    .contact {
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .contact .card {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner { align-items: flex-start; padding: 15px 0; }
+      .nav-links { gap: 12px; }
+      .grid,
+      .experience,
+      .status-grid { grid-template-columns: 1fr; }
+      .method { grid-template-columns: repeat(2, 1fr); }
+      header { padding: 80px 0 65px; }
+      section { padding: 65px 0; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .nav-inner { flex-direction: column; }
+      .nav-links { font-size: 0.84rem; }
+      h1 { font-size: 3rem; }
+      .method { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
+
 <body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#">CHANDLER<span>.THOMAS</span></a>
+      <div class="nav-links">
+        <a href="#technical">Technical</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<header>
-  <h1>Chandler Thomas</h1>
-  <p>Network Engineer / Network Administrator</p>
-  <p>Enterprise networking • Monitoring • Troubleshooting • Automation</p>
-</header>
+  <header>
+    <div class="container">
+      <div class="eyebrow">Network Operations • Infrastructure • Engineering</div>
+      <h1>
+        Chandler Thomas<br />
+        <span class="hero-title">Network Engineer</span>
+      </h1>
+      <p class="hero-copy">
+        Hands-on network troubleshooting, infrastructure operations, monitoring,
+        and enterprise connectivity across commercial and service-provider environments.
+      </p>
 
-<section>
+      <div class="actions">
+        <a class="button primary" href="#projects">Explore Engineering Projects</a>
+        <a class="button" href="https://github.com/Chandlert-web" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="button" href="mailto:chandlerdthomas@yahoo.com">Contact Me</a>
+      </div>
+    </div>
+  </header>
 
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am a Network Engineer / Network Administrator with hands-on experience supporting
-      enterprise and service provider networks in production environments.
-      My work focuses on network reliability, performance monitoring, structured troubleshooting,
-      and clear technical documentation.
-    </p>
-    <p>
-      I have daily experience working with Cisco switching, SolarWinds-style monitoring concepts,
-      load balancers, and OSI-based troubleshooting methodologies.
-      I approach networking with an operational mindset — designing, monitoring, and resolving issues efficiently.
-    </p>
+  <main>
+    <section id="technical">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Technical Acumen</h2>
+          <p>
+            Production experience across enterprise networking, service-provider infrastructure,
+            monitoring, wireless, and structured troubleshooting.
+          </p>
+        </div>
 
-    <h3>Education</h3>
-<ul>
-  <li>
-    <strong>Associate of Arts</strong> — Concentration in Pre-Computer Engineering
-  </li>
+        <div class="grid">
+          <article class="card skill-card">
+            <span class="skill-label">Networking Fundamentals</span>
+            <ul>
+              <li>TCP/IP, IPv4 addressing and subnetting</li>
+              <li>DHCP, DNS, ARP, ICMP and Ethernet</li>
+              <li>Layer 1–4 troubleshooting</li>
+              <li>Connectivity, latency and packet-loss analysis</li>
+            </ul>
+          </article>
 
-  <li>
-    <strong>Bachelor of Science</strong> — Information Systems Technology  
-    <br />
-    <em>Concentration in Programming</em>
-  </li>
+          <article class="card skill-card">
+            <span class="skill-label">Switching & Routing</span>
+            <ul>
+              <li>Cisco IOS switching and routing</li>
+              <li>VLANs and inter-VLAN routing</li>
+              <li>Trunking, STP and interface troubleshooting</li>
+              <li>Juniper and Meraki production environments</li>
+            </ul>
+          </article>
 
-  <li>
-    <strong>Master of Science</strong> — Information Technology Management  
-    <br />
-    <em>Currently Pursuing — Expected Graduation: January 2027</em>
-  </li>
-</ul>
-  <h2>Core Skills</h2>
-  <div class="card">
-    <ul>
-      <li><strong>Networking:</strong> TCP/IP, VLANs, Subnetting, DNS, DHCP, ARP</li>
-      <li><strong>Routing & Switching:</strong> Cisco IOS, Inter-VLAN Routing, STP, EtherChannel</li>
-      <li><strong>Monitoring:</strong> SolarWinds concepts, SNMP, ICMP, Syslog, Performance Metrics</li>
-      <li><strong>Troubleshooting:</strong> OSI Model, Packet Loss, Latency, Root Cause Analysis</li>
-      <li><strong>Automation:</strong> Bash, Python (foundational), Network Scripting Concepts</li>
-      <li><strong>Tools:</strong> Wireshark, Linux, Git, GitHub</li>
-    </ul>
-  </div>
-  
-<h2>Projects</h2>
-<!-- ENTERPRISE NETWORK LAB -->
-<div class="card">
-  <h3>Enterprise Network Lab</h3>
-  <p>
-    Designed and documented a segmented enterprise network using VLANs and inter-VLAN routing.
-    Focused on scalability, fault isolation, and operational troubleshooting.
-  </p>
-  <p><strong>Technologies:</strong> Cisco IOS, VLANs, Routing</p>
-  <p>
-    <a href="https://github.com/Chandlert-web/enterprise-network-lab"
-       target="_blank"
-       rel="noopener noreferrer">
-       View on GitHub →
-    </a>
-  </p>
-</div>
+          <article class="card skill-card">
+            <span class="skill-label">Wireless & Access</span>
+            <ul>
+              <li>Enterprise wireless/WLAN troubleshooting</li>
+              <li>Aruba production and laboratory experience</li>
+              <li>Client connectivity, coverage and roaming concepts</li>
+              <li>PON, GPON and XGS-PON infrastructure</li>
+            </ul>
+          </article>
 
-<!-- NETWORK MONITORING & ALERTING LAB -->
-<div class="card">
-  <h3>Network Monitoring & Alerting Lab</h3>
-  <p>
-    Implemented an enterprise-style monitoring and alerting lab focused on performance visibility,
-    alert thresholds, and structured incident response workflows.
-  </p>
-  <p><strong>Technologies:</strong> SolarWinds concepts, SNMP, ICMP</p>
-  <p>
-    <a href="https://github.com/Chandlert-web/network-monitoring-alerting-lab"
-       target="_blank"
-       rel="noopener noreferrer">
-       View on GitHub →
-    </a>
-  </p>
-</div>
+          <article class="card skill-card">
+            <span class="skill-label">Monitoring & Troubleshooting</span>
+            <ul>
+              <li>SolarWinds production monitoring</li>
+              <li>Wireshark packet analysis</li>
+              <li>SNMP, ICMP, syslog and performance metrics</li>
+              <li>Root-cause analysis and incident escalation</li>
+            </ul>
+          </article>
 
-<!-- NETWORK TROUBLESHOOTING PLAYBOOKS -->
-<div class="card">
-  <h3>Network Troubleshooting Playbooks</h3>
-  <p>
-    OSI-based troubleshooting playbooks documenting repeatable approaches to diagnosing
-    and resolving common enterprise network issues.
-  </p>
-  <p><strong>Focus:</strong> Gateway failures, VLAN misconfiguration, DNS resolution</p>
-  <p>
-    <a href="https://github.com/Chandlert-web/network-troubleshooting-playbooks"
-       target="_blank"
-       rel="noopener noreferrer">
-       View on GitHub →
-    </a>
-  </p>
-</div>
+          <article class="card skill-card">
+            <span class="skill-label">Security & Edge Infrastructure</span>
+            <ul>
+              <li>Fortinet production and laboratory experience</li>
+              <li>Firewall, NAT, VPN and SD-WAN concepts</li>
+              <li>Network segmentation and access control</li>
+              <li>Zero Trust architecture fundamentals</li>
+            </ul>
+          </article>
 
-<!-- ZERO TRUST NETWORK LAB -->
-<div class="card">
-  <h3>Zero Trust Network Lab</h3>
-  <p>
-    Designed a Zero Trust network architecture using strict segmentation, default-deny inter-zone
-    access, centralized policy enforcement, and continuous monitoring.
-  </p>
-  <p><strong>Focus:</strong> Zero Trust, segmentation, least privilege, continuous verification</p>
-  <p>
-    <a href="https://github.com/Chandlert-web/zero-trust-network-lab"
-       target="_blank"
-       rel="noopener noreferrer">
-       View on GitHub →
-    </a>
-  </p>
-</div>
-  
-<div class="project">
-  <h3>Azure Hybrid Identity & Active Directory Architecture</h3>
-  <p>
-    Designed a secure hybrid identity architecture integrating on-prem Active Directory with Microsoft Azure Entra ID, focusing on enterprise access control, RBAC, and Zero Trust principles.
-  </p>
-  <a href="https://github.com/Chandlert-web/azure-hybrid-identity-active-directory" target="_blank">
-    View on GitHub
-  </a>
-</div>
-  
-  <h2>Contact</h2>
-  <div class="card">
-    <p><strong>Phone:</strong> <a href="tel:14076395300">407-639-5300</a></p>
-    <p><strong>Email:</strong> <a href="mailto:chandlerdthomas@yahoo.com">chandlerdthomas@yahoo.com</a></p>
-    <p><strong>Location:</strong> Daytona Beach, FL</p>
-  </div>
+          <article class="card skill-card">
+            <span class="skill-label">Systems & Automation</span>
+            <ul>
+              <li>Linux production and laboratory experience</li>
+              <li>Python production and laboratory experience</li>
+              <li>Network scripting and automation concepts</li>
+              <li>Git and GitHub</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Production Network Experience</h2>
+          <p>Technical operations experience supporting reliable connectivity and service delivery.</p>
+        </div>
 
-<footer>
-  <p>
-    GitHub:
-    <a href="https://github.com/Chandlert-web"
-       target="_blank"
-       rel="noopener noreferrer">
-       github.com/Chandlert-web
-    </a>
-  </p>
-  <p>© 2026 Chandler Thomas</p>
-</footer>
+        <div class="card experience">
+          <div>
+            <div class="role">Commercial Support Technician</div>
+            <div class="meta">Summit Broadband</div>
+            <div class="meta">Network Operations / Commercial Support</div>
+          </div>
 
+          <ul>
+            <li>Collaborate with NOC and commercial support teams to investigate and resolve network connectivity incidents.</li>
+            <li>Work with Cisco switches, routers, CPE, NIDs and other network infrastructure.</li>
+            <li>Perform Layer 1 and Layer 2 troubleshooting and isolate faults using structured OSI/TCP-IP methodology.</li>
+            <li>Support IP configuration projects, including subnetting and deployment of new IP addressing to existing subscribers.</li>
+            <li>Use SolarWinds for network monitoring, visibility and issue investigation.</li>
+            <li>Work with network configuration data and operational spreadsheets to improve ticket and change workflows.</li>
+            <li>Translate technical network changes into clear guidance for non-technical users and stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Engineering Projects</h2>
+          <p>
+            Practical labs designed to demonstrate how I approach network design, monitoring,
+            troubleshooting and infrastructure operations.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card featured">
+            <div class="project-number">PROJECT 01 • FLAGSHIP</div>
+            <h3>Perishable Distribution Center Network Operations Lab</h3>
+            <p>
+              A warehouse-focused network simulation designed around wireless handhelds,
+              voice devices, printers, switching, DHCP/DNS, WAN connectivity and operational continuity.
+            </p>
+            <div class="tags">
+              <span class="tag">Aruba WLAN</span>
+              <span class="tag">VLANs</span>
+              <span class="tag">DHCP/DNS</span>
+              <span class="tag">Fortinet SD-WAN</span>
+              <span class="tag">Zebra</span>
+              <span class="tag">Honeywell Voice</span>
+              <span class="tag">Monitoring</span>
+            </div>
+            <p><strong>Planned case studies:</strong> wireless client failure, VLAN misassignment, DHCP failure, printer outage, voice-device connectivity and WAN failover.</p>
+            <a class="project-link" href="network-engineering/pdc-network-operations-lab.md">Explore project →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>Enterprise Network Engineering Lab</h3>
+            <p>
+              Segmented enterprise network design emphasizing VLANs, inter-VLAN routing,
+              fault isolation, scalability and operational troubleshooting.
+            </p>
+            <div class="tags">
+              <span class="tag">Cisco IOS</span>
+              <span class="tag">VLANs</span>
+              <span class="tag">Routing</span>
+              <span class="tag">DHCP</span>
+              <span class="tag">STP</span>
+            </div>
+            <a class="project-link" href="https://github.com/Chandlert-web/enterprise-network-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Network Monitoring & Alerting Lab</h3>
+            <p>
+              Enterprise-style monitoring workflow focused on availability, latency,
+              packet loss, alert thresholds and structured incident response.
+            </p>
+            <div class="tags">
+              <span class="tag">SNMP</span>
+              <span class="tag">ICMP</span>
+              <span class="tag">SolarWinds</span>
+              <span class="tag">Alerting</span>
+            </div>
+            <a class="project-link" href="https://github.com/Chandlert-web/network-monitoring-alerting-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT 04</div>
+            <h3>Network Troubleshooting Playbooks</h3>
+            <p>
+              Repeatable troubleshooting procedures for gateway failures, VLAN issues,
+              DNS problems, interface failures and other common enterprise incidents.
+            </p>
+            <div class="tags">
+              <span class="tag">OSI Model</span>
+              <span class="tag">TCP/IP</span>
+              <span class="tag">Wireshark</span>
+              <span class="tag">Root Cause</span>
+            </div>
+            <a class="project-link" href="https://github.com/Chandlert-web/network-troubleshooting-playbooks" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT 05</div>
+            <h3>Zero Trust Network Lab</h3>
+            <p>
+              Segmented network architecture using least privilege, default-deny access,
+              centralized policy enforcement and continuous verification.
+            </p>
+            <div class="tags">
+              <span class="tag">Segmentation</span>
+              <span class="tag">ACLs</span>
+              <span class="tag">Least Privilege</span>
+              <span class="tag">Monitoring</span>
+            </div>
+            <a class="project-link" href="https://github.com/Chandlert-web/zero-trust-network-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT 06</div>
+            <h3>Azure Hybrid Identity & Active Directory Architecture</h3>
+            <p>
+              Hybrid identity architecture connecting on-premises Active Directory concepts
+              with Microsoft Entra ID, RBAC and Zero Trust principles.
+            </p>
+            <div class="tags">
+              <span class="tag">Active Directory</span>
+              <span class="tag">Entra ID</span>
+              <span class="tag">RBAC</span>
+              <span class="tag">Zero Trust</span>
+            </div>
+            <a class="project-link" href="https://github.com/Chandlert-web/azure-hybrid-identity-active-directory" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Troubleshooting Methodology</h2>
+          <p>
+            My approach is operational: understand the impact, isolate the fault,
+            validate the evidence, restore service, and document the outcome.
+          </p>
+        </div>
+
+        <div class="method">
+          <div class="method-step"><strong>01 Identify</strong><span>Define symptom & impact</span></div>
+          <div class="method-step"><strong>02 Scope</strong><span>Determine affected devices</span></div>
+          <div class="method-step"><strong>03 Isolate</strong><span>Map the failure layer</span></div>
+          <div class="method-step"><strong>04 Analyze</strong><span>Test and collect evidence</span></div>
+          <div class="method-step"><strong>05 Restore</strong><span>Remediate & validate</span></div>
+          <div class="method-step"><strong>06 Document</strong><span>Record root cause</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Education & Certification Roadmap</h2>
+          <p>Academic preparation paired with an active professional certification roadmap.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Master of Science</h3>
+            <p><strong>Information Technology Management</strong><br />Information Assurance & Cybersecurity</p>
+            <span class="meta">Currently pursuing • Expected graduation: January 2027</span>
+          </article>
+
+          <article class="card">
+            <h3>Bachelor of Science</h3>
+            <p><strong>Information Systems Technology</strong><br />Concentration in Programming</p>
+            <span class="meta">Completed</span>
+          </article>
+        </div>
+
+        <div class="status-grid" style="margin-top: 18px;">
+          <div class="status"><strong>CompTIA Security+</strong><span>Scheduled</span></div>
+          <div class="status"><strong>Cisco CCNA</strong><span>Scheduled</span></div>
+          <div class="status"><strong>Aruba Networking</strong><span>Scheduled</span></div>
+          <div class="status"><strong>Fortinet Certification</strong><span>Scheduled</span></div>
+          <div class="status"><strong>VMware / Virtualization</strong><span>Scheduled</span></div>
+          <div class="status"><strong>Additional Certifications</strong><span>Roadmap in progress</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Let's Connect</h2>
+          <p>
+            Interested in network engineering, infrastructure operations,
+            technical projects, or professional opportunities.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="contact-links">
+            <a class="button primary" href="mailto:chandlerdthomas@yahoo.com">Email Me</a>
+            <a class="button" href="https://github.com/Chandlert-web" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button" href="tel:14076395300">Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Chandler Thomas</span>
+      <span>Network Engineer • Network Operations • Infrastructure</span>
+    </div>
+  </footer>
 </body>
 </html>
