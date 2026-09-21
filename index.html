@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chandler Thomas — Network Engineer focused on network operations, infrastructure, troubleshooting, monitoring, and enterprise connectivity." />
-  <title>Chandler Thomas | Network Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Chandler Thomas — Network Communications Engineer focused on network operations, infrastructure, troubleshooting, automation, and multi-vendor networking."
+  >
+
+  <title>Chandler Thomas | Network Communications Engineer</title>
 
   <style>
     :root {
@@ -22,701 +27,1164 @@
       --radius: 16px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(circle at 85% 10%, rgba(92, 200, 255, 0.10), transparent 28%),
-        linear-gradient(180deg, var(--bg) 0%, #081423 100%);
+        radial-gradient(circle at top right, rgba(92, 200, 255, 0.10), transparent 30%),
+        linear-gradient(180deg, #07111f 0%, #091423 100%);
       color: var(--text);
-      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(92%, var(--max));
       margin: 0 auto;
     }
+
+    /* NAVIGATION */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
       backdrop-filter: blur(14px);
-      background: rgba(7, 17, 31, 0.84);
-      border-bottom: 1px solid rgba(32, 49, 73, 0.8);
+      background: rgba(7, 17, 31, 0.88);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
-      min-height: 68px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
     .brand {
       font-weight: 800;
-      letter-spacing: -0.02em;
-      text-decoration: none;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
     }
 
-    .brand span { color: var(--accent); }
+    .brand span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.92rem;
+      gap: 24px;
       color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      transition: color 0.2s ease;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    /* HERO */
 
-    header {
+    .hero {
       padding: 110px 0 90px;
       border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--accent-2);
+      color: var(--accent);
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--success);
-      box-shadow: 0 0 16px rgba(98, 215, 162, 0.45);
+      margin-bottom: 18px;
     }
 
     h1 {
-      max-width: 850px;
-      margin: 18px 0 18px;
-      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      font-size: clamp(3rem, 7vw, 6rem);
       line-height: 0.98;
-      letter-spacing: -0.055em;
+      margin: 0 0 24px;
+      letter-spacing: -0.05em;
     }
 
-    .hero-title {
+    .hero h1 span {
       color: var(--accent);
     }
 
-    .hero-copy {
-      max-width: 750px;
-      margin: 0;
+    .hero-subtitle {
+      max-width: 760px;
       color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      margin-bottom: 34px;
     }
 
-    .actions {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+      gap: 14px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid var(--line);
+      min-height: 48px;
+      padding: 0 22px;
       border-radius: 10px;
-      text-decoration: none;
-      font-weight: 750;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.2s ease;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-    }
-
-    .button.primary {
-      color: #04111d;
+    .button-primary {
       background: var(--accent);
+      color: #04101c;
       border-color: var(--accent);
     }
 
-    section { padding: 82px 0; }
+    .button-primary:hover {
+      background: var(--accent-2);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
 
     .section-heading {
-      margin-bottom: 30px;
+      margin-bottom: 44px;
     }
 
     .section-heading h2 {
-      margin: 0 0 7px;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 10px;
       letter-spacing: -0.035em;
     }
 
     .section-heading p {
-      margin: 0;
+      max-width: 720px;
       color: var(--muted);
-      max-width: 760px;
+      margin: 0;
     }
 
-    .grid {
+    /* TECHNICAL ACUMEN */
+
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .card {
-      background: linear-gradient(145deg, rgba(17, 31, 52, 0.96), rgba(10, 23, 40, 0.96));
+    .skill-card {
+      background: linear-gradient(145deg, var(--panel), var(--panel-2));
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 25px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+      padding: 26px;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
+    .skill-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 1.05rem;
     }
 
-    .card p {
+    .skill-card p {
+      margin: 0;
       color: var(--muted);
-      margin: 0 0 14px;
+      font-size: 0.94rem;
     }
 
-    .skill-card ul,
-    .experience ul {
+    /* EXPERIENCE */
+
+    .experience-card {
+      background: linear-gradient(145deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .experience-top h3 {
+      margin: 0 0 5px;
+      font-size: 1.35rem;
+    }
+
+    .experience-top p {
+      margin: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .experience-date {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .experience-list {
       margin: 0;
       padding-left: 20px;
       color: var(--muted);
     }
 
-    .skill-card li,
-    .experience li { margin-bottom: 6px; }
-
-    .skill-label {
-      display: inline-block;
-      color: var(--text);
-      font-weight: 800;
-      margin-bottom: 8px;
+    .experience-list li {
+      margin-bottom: 10px;
     }
 
-    .experience {
+    /* PROJECTS */
+
+    .project-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.5fr;
-      gap: 32px;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
-    .role {
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .featured {
+    .project-card {
       position: relative;
-      overflow: hidden;
-      border-color: rgba(92, 200, 255, 0.42);
-      background:
-        radial-gradient(circle at 100% 0%, rgba(92, 200, 255, 0.13), transparent 36%),
-        linear-gradient(145deg, #102238, #0a1728);
+      background: linear-gradient(145deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .featured::after {
-      content: "FEATURED";
-      position: absolute;
-      top: 18px;
-      right: -36px;
-      transform: rotate(36deg);
-      padding: 4px 42px;
-      background: var(--accent);
-      color: #061321;
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
     }
 
     .project-number {
       color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 800;
+      letter-spacing: 0.12em;
     }
 
-    .tags {
+    .project-card h3 {
+      font-size: 1.35rem;
+      margin: 12px 0;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin: 16px 0;
+      gap: 8px;
+      margin-bottom: 22px;
     }
 
     .tag {
+      padding: 5px 9px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.025);
-      color: #c9d6e5;
-      padding: 4px 9px;
-      border-radius: 999px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.76rem;
-    }
-
-    .project-link {
-      display: inline-flex;
-      margin-top: 4px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .project-link:hover { text-decoration: underline; }
-
-    .method {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
-    }
-
-    .method-step {
-      padding: 17px 12px;
-      text-align: center;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--panel);
-    }
-
-    .method-step strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.9rem;
-    }
-
-    .method-step span {
+      border-radius: 7px;
       color: var(--muted);
       font-size: 0.75rem;
     }
 
-    .status-grid {
+    .project-link {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: var(--accent-2);
+    }
+
+    .featured {
+      grid-column: span 2;
+      border-color: rgba(92, 200, 255, 0.45);
+    }
+
+    /* METHODOLOGY */
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .method-step {
+      padding: 22px 16px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .method-step strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+    }
+
+    .method-step span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* SUPPORTING LABS */
+
+    .labs-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
 
-    .status {
-      padding: 18px;
+    .lab {
+      padding: 20px;
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: var(--panel);
     }
 
-    .status strong { display: block; margin-bottom: 3px; }
-    .status span { color: var(--muted); font-size: 0.88rem; }
+    .lab strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .lab span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .education-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .education-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
+    .education-card .highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* RESUME */
+
+    .resume-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(92, 200, 255, 0.12), rgba(14, 27, 46, 0.9));
+      border: 1px solid rgba(92, 200, 255, 0.35);
+      border-radius: var(--radius);
+    }
+
+    .resume-panel h3 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+    }
+
+    .resume-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
 
     .contact {
       text-align: center;
-      padding-bottom: 100px;
     }
 
-    .contact .card {
-      max-width: 760px;
-      margin: 0 auto;
+    .contact p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 18px;
+      gap: 14px;
     }
+
+    /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
+      padding: 35px 0;
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.85rem;
     }
 
-    footer .footer-inner {
+    footer .container {
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
-    @media (max-width: 800px) {
-      .nav-inner { align-items: flex-start; padding: 15px 0; }
-      .nav-links { gap: 12px; }
-      .grid,
-      .experience,
-      .status-grid { grid-template-columns: 1fr; }
-      .method { grid-template-columns: repeat(2, 1fr); }
-      header { padding: 80px 0 65px; }
-      section { padding: 65px 0; }
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .skills-grid,
+      .project-grid,
+      .labs-list,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        grid-column: span 1;
+      }
+
+      .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-top,
+      .resume-panel,
+      footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
     }
 
-    @media (max-width: 520px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
-      .nav-inner { flex-direction: column; }
-      .nav-links { font-size: 0.84rem; }
-      h1 { font-size: 3rem; }
-      .method { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card,
+      .project-card,
+      .skill-card,
+      .education-card,
+      .resume-panel {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
+
   <nav>
     <div class="container nav-inner">
-      <a class="brand" href="#">CHANDLER<span>.THOMAS</span></a>
+      <a href="#" class="brand">
+        CHANDLER<span>.THOMAS</span>
+      </a>
+
       <div class="nav-links">
-        <a href="#technical">Technical</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#education">Education</a>
+        <a href="#skills">Technical Acumen</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header>
+  <!-- HERO -->
+
+  <header class="hero">
     <div class="container">
-      <div class="eyebrow">Network Operations • Infrastructure • Engineering</div>
+
+      <div class="eyebrow">
+        Network Operations • Infrastructure • Engineering
+      </div>
+
       <h1>
-        Chandler Thomas<br />
-        <span class="hero-title">Network Engineer</span>
+        Network<br>
+        <span>Engineer.</span>
       </h1>
-      <p class="hero-copy">
-        Hands-on network troubleshooting, infrastructure operations, monitoring,
-        and enterprise connectivity across commercial and service-provider environments.
+
+      <p class="hero-subtitle">
+        Network communications professional focused on multi-vendor
+        infrastructure, troubleshooting, network operations, fiber access,
+        monitoring, and infrastructure automation.
       </p>
 
-      <div class="actions">
-        <a class="button primary" href="#projects">Explore Engineering Projects</a>
-        <a class="button" href="https://github.com/Chandlert-web" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="button" href="mailto:chandlerdthomas@yahoo.com">Contact Me</a>
+      <div class="hero-buttons">
+        <a href="#projects" class="button button-primary">
+          View Engineering Projects
+        </a>
+
+        <a
+          href="resume/Chandler-Thomas-Network-Engineer-Resume.pdf"
+          class="button button-secondary"
+          target="_blank"
+          rel="noopener"
+        >
+          Download Resume
+        </a>
       </div>
+
     </div>
   </header>
 
-  <main>
-    <section id="technical">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Technical Acumen</h2>
+  <!-- TECHNICAL ACUMEN -->
+
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Technical Acumen</div>
+        <h2>Infrastructure from Layer 1 to Automation.</h2>
+        <p>
+          Hands-on experience spanning switching, routing, IP networking,
+          monitoring, voice/data convergence, fiber access, troubleshooting,
+          and engineering automation.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Switching & Routing</h3>
           <p>
-            Production experience across enterprise networking, service-provider infrastructure,
-            monitoring, wireless, and structured troubleshooting.
+            Cisco switches and routers, Juniper switches and routers,
+            Junos configuration, routing principles, VLAN segmentation,
+            and multi-vendor network support.
           </p>
         </div>
 
-        <div class="grid">
-          <article class="card skill-card">
-            <span class="skill-label">Networking Fundamentals</span>
-            <ul>
-              <li>TCP/IP, IPv4 addressing and subnetting</li>
-              <li>DHCP, DNS, ARP, ICMP and Ethernet</li>
-              <li>Layer 1–4 troubleshooting</li>
-              <li>Connectivity, latency and packet-loss analysis</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card">
-            <span class="skill-label">Switching & Routing</span>
-            <ul>
-              <li>Cisco IOS switching and routing</li>
-              <li>VLANs and inter-VLAN routing</li>
-              <li>Trunking, STP and interface troubleshooting</li>
-              <li>Juniper and Meraki production environments</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card">
-            <span class="skill-label">Wireless & Access</span>
-            <ul>
-              <li>Enterprise wireless/WLAN troubleshooting</li>
-              <li>Aruba production and laboratory experience</li>
-              <li>Client connectivity, coverage and roaming concepts</li>
-              <li>PON, GPON and XGS-PON infrastructure</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card">
-            <span class="skill-label">Monitoring & Troubleshooting</span>
-            <ul>
-              <li>SolarWinds production monitoring</li>
-              <li>Wireshark packet analysis</li>
-              <li>SNMP, ICMP, syslog and performance metrics</li>
-              <li>Root-cause analysis and incident escalation</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card">
-            <span class="skill-label">Security & Edge Infrastructure</span>
-            <ul>
-              <li>Fortinet production and laboratory experience</li>
-              <li>Firewall, NAT, VPN and SD-WAN concepts</li>
-              <li>Network segmentation and access control</li>
-              <li>Zero Trust architecture fundamentals</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card">
-            <span class="skill-label">Systems & Automation</span>
-            <ul>
-              <li>Linux production and laboratory experience</li>
-              <li>Python production and laboratory experience</li>
-              <li>Network scripting and automation concepts</li>
-              <li>Git and GitHub</li>
-            </ul>
-          </article>
+        <div class="skill-card">
+          <h3>IP Networking</h3>
+          <p>
+            TCP/IP, IPv4, subnetting, IP addressing, VLANs, ARP, DHCP,
+            DNS, Layer 1–2 troubleshooting, and connectivity validation.
+          </p>
         </div>
+
+        <div class="skill-card">
+          <h3>Fiber & Access Networks</h3>
+          <p>
+            GPON, XGS-PON, ONTs, OLT infrastructure, PON architecture,
+            CPE, NIDs, cable modems, and fiber-based commercial networks.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Monitoring & Operations</h3>
+          <p>
+            SolarWinds network monitoring, incident and ticket management,
+            alarm investigation, root-cause troubleshooting, and
+            configuration validation.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Voice & Data</h3>
+          <p>
+            SIP-based voice services, Metaswitch voice platform
+            infrastructure, business connectivity, customer activations,
+            cutovers, and change coordination.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Automation & Development</h3>
+          <p>
+            Python, Git, GitHub, SQL, Java, network automation concepts,
+            configuration generation, validation, and infrastructure
+            tooling.
+          </p>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="experience">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Production Network Experience</h2>
-          <p>Technical operations experience supporting reliable connectivity and service delivery.</p>
-        </div>
+  <!-- EXPERIENCE -->
 
-        <div class="card experience">
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Production Experience</div>
+        <h2>Network Operations in the Real World.</h2>
+        <p>
+          Commercial network support involving multi-vendor infrastructure,
+          customer-impacting incidents, implementation activities, and
+          network operations coordination.
+        </p>
+      </div>
+
+      <div class="experience-card">
+
+        <div class="experience-top">
           <div>
-            <div class="role">Commercial Support Technician</div>
-            <div class="meta">Summit Broadband</div>
-            <div class="meta">Network Operations / Commercial Support</div>
+            <h3>Commercial Network Technician</h3>
+            <p>Summit Broadband — Orlando, FL</p>
           </div>
 
-          <ul>
-            <li>Collaborate with NOC and commercial support teams to investigate and resolve network connectivity incidents.</li>
-            <li>Work with Cisco switches, routers, CPE, NIDs and other network infrastructure.</li>
-            <li>Perform Layer 1 and Layer 2 troubleshooting and isolate faults using structured OSI/TCP-IP methodology.</li>
-            <li>Support IP configuration projects, including subnetting and deployment of new IP addressing to existing subscribers.</li>
-            <li>Use SolarWinds for network monitoring, visibility and issue investigation.</li>
-            <li>Work with network configuration data and operational spreadsheets to improve ticket and change workflows.</li>
-            <li>Translate technical network changes into clear guidance for non-technical users and stakeholders.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Featured Engineering Projects</h2>
-          <p>
-            Practical labs designed to demonstrate how I approach network design, monitoring,
-            troubleshooting and infrastructure operations.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card featured">
-            <div class="project-number">PROJECT 01 • FLAGSHIP</div>
-            <h3>Perishable Distribution Center Network Operations Lab</h3>
-            <p>
-              A warehouse-focused network simulation designed around wireless handhelds,
-              voice devices, printers, switching, DHCP/DNS, WAN connectivity and operational continuity.
-            </p>
-            <div class="tags">
-              <span class="tag">Aruba WLAN</span>
-              <span class="tag">VLANs</span>
-              <span class="tag">DHCP/DNS</span>
-              <span class="tag">Fortinet SD-WAN</span>
-              <span class="tag">Zebra</span>
-              <span class="tag">Honeywell Voice</span>
-              <span class="tag">Monitoring</span>
-            </div>
-            <p><strong>Planned case studies:</strong> wireless client failure, VLAN misassignment, DHCP failure, printer outage, voice-device connectivity and WAN failover.</p>
-            <a <a class="project-link" href="network-engineering/pdc-network-operations-lab.html"> Explore Engineering Case Study → </a>
-          </article>
-
-          <article class="card">
-            <div class="project-number">PROJECT 02</div>
-            <h3>Enterprise Network Engineering Lab</h3>
-            <p>
-              Segmented enterprise network design emphasizing VLANs, inter-VLAN routing,
-              fault isolation, scalability and operational troubleshooting.
-            </p>
-            <div class="tags">
-              <span class="tag">Cisco IOS</span>
-              <span class="tag">VLANs</span>
-              <span class="tag">Routing</span>
-              <span class="tag">DHCP</span>
-              <span class="tag">STP</span>
-            </div>
-            <a class="project-link" href="https://github.com/Chandlert-web/enterprise-network-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <div class="project-number">PROJECT 03</div>
-            <h3>Network Monitoring & Alerting Lab</h3>
-            <p>
-              Enterprise-style monitoring workflow focused on availability, latency,
-              packet loss, alert thresholds and structured incident response.
-            </p>
-            <div class="tags">
-              <span class="tag">SNMP</span>
-              <span class="tag">ICMP</span>
-              <span class="tag">SolarWinds</span>
-              <span class="tag">Alerting</span>
-            </div>
-            <a class="project-link" href="https://github.com/Chandlert-web/network-monitoring-alerting-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <div class="project-number">PROJECT 04</div>
-            <h3>Network Troubleshooting Playbooks</h3>
-            <p>
-              Repeatable troubleshooting procedures for gateway failures, VLAN issues,
-              DNS problems, interface failures and other common enterprise incidents.
-            </p>
-            <div class="tags">
-              <span class="tag">OSI Model</span>
-              <span class="tag">TCP/IP</span>
-              <span class="tag">Wireshark</span>
-              <span class="tag">Root Cause</span>
-            </div>
-            <a class="project-link" href="https://github.com/Chandlert-web/network-troubleshooting-playbooks" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <div class="project-number">PROJECT 05</div>
-            <h3>Zero Trust Network Lab</h3>
-            <p>
-              Segmented network architecture using least privilege, default-deny access,
-              centralized policy enforcement and continuous verification.
-            </p>
-            <div class="tags">
-              <span class="tag">Segmentation</span>
-              <span class="tag">ACLs</span>
-              <span class="tag">Least Privilege</span>
-              <span class="tag">Monitoring</span>
-            </div>
-            <a class="project-link" href="https://github.com/Chandlert-web/zero-trust-network-lab" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          </article>
-
-          <article class="card">
-            <div class="project-number">PROJECT 06</div>
-            <h3>Azure Hybrid Identity & Active Directory Architecture</h3>
-            <p>
-              Hybrid identity architecture connecting on-premises Active Directory concepts
-              with Microsoft Entra ID, RBAC and Zero Trust principles.
-            </p>
-            <div class="tags">
-              <span class="tag">Active Directory</span>
-              <span class="tag">Entra ID</span>
-              <span class="tag">RBAC</span>
-              <span class="tag">Zero Trust</span>
-            </div>
-            <a class="project-link" href="https://github.com/Chandlert-web/azure-hybrid-identity-active-directory" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="methodology">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Troubleshooting Methodology</h2>
-          <p>
-            My approach is operational: understand the impact, isolate the fault,
-            validate the evidence, restore service, and document the outcome.
-          </p>
-        </div>
-
-        <div class="method">
-          <div class="method-step"><strong>01 Identify</strong><span>Define symptom & impact</span></div>
-          <div class="method-step"><strong>02 Scope</strong><span>Determine affected devices</span></div>
-          <div class="method-step"><strong>03 Isolate</strong><span>Map the failure layer</span></div>
-          <div class="method-step"><strong>04 Analyze</strong><span>Test and collect evidence</span></div>
-          <div class="method-step"><strong>05 Restore</strong><span>Remediate & validate</span></div>
-          <div class="method-step"><strong>06 Document</strong><span>Record root cause</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Education & Certification Roadmap</h2>
-          <p>Academic preparation paired with an active professional certification roadmap.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <h3>Master of Science</h3>
-            <p><strong>Information Technology Management</strong><br />Information Assurance & Cybersecurity</p>
-            <span class="meta">Currently pursuing • Expected graduation: December 2026</span>
-          </article>
-
-          <article class="card">
-            <h3>Bachelor of Science</h3>
-            <p><strong>Information Systems Technology</strong><br />Concentration in Programming</p>
-            <span class="meta">Completed</span>
-          </article>
-        </div>
-
-        <div class="status-grid" style="margin-top: 18px;">
-          <div class="status"><strong>CompTIA Security+</strong><span>Scheduled</span></div>
-          <div class="status"><strong>Cisco CCNA</strong><span>Scheduled</span></div>
-          <div class="status"><strong>Aruba Networking</strong><span>Scheduled</span></div>
-          <div class="status"><strong>Fortinet Certification</strong><span>Scheduled</span></div>
-          <div class="status"><strong>VMware / Virtualization</strong><span>Scheduled</span></div>
-          <div class="status"><strong>Additional Certifications</strong><span>Roadmap in progress</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Let's Connect</h2>
-          <p>
-            Interested in network engineering, infrastructure operations,
-            technical projects, or professional opportunities.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="contact-links">
-            <a class="button primary" href="mailto:chandlerdthomas@yahoo.com">Email Me</a>
-            <a class="button" href="https://github.com/Chandlert-web" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="button" href="tel:14076395300">Call</a>
+          <div class="experience-date">
+            2024 – Present
           </div>
         </div>
+
+        <ul class="experience-list">
+          <li>
+            Work with Juniper switches alongside Cisco switching and
+            Raisecom access equipment in multi-vendor commercial
+            network environments.
+          </li>
+
+          <li>
+            Support SIP-based voice services and Metaswitch voice
+            platform infrastructure as part of converged voice and
+            data network operations.
+          </li>
+
+          <li>
+            Partner with the Network Operations Center to troubleshoot
+            customer connectivity and service-impacting issues across
+            multiple sites.
+          </li>
+
+          <li>
+            Troubleshoot Layer 1 and Layer 2 problems across switches,
+            routers, NIDs, CPE, ONTs, cable modems, and related
+            infrastructure.
+          </li>
+
+          <li>
+            Work with TCP/IP, IPv4, subnetting, VLANs, ARP, DHCP,
+            DNS, and routing principles to validate connectivity.
+          </li>
+
+          <li>
+            Support commercial IP addressing projects involving new
+            assignments and subnet changes while validating connectivity
+            and minimizing customer impact.
+          </li>
+
+          <li>
+            Use SolarWinds and monitoring tools to identify network
+            conditions, analyze performance, investigate alarms,
+            isolate faults, and coordinate resolution.
+          </li>
+
+          <li>
+            Support network implementation, deployment, cutover,
+            documentation, and project activities.
+          </li>
+
+          <li>
+            Support broadband access environments involving GPON,
+            XGS-PON, ONTs, OLT infrastructure, and optical network
+            architecture.
+          </li>
+        </ul>
+
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Featured Engineering Projects</div>
+        <h2>Engineering beyond the ticket.</h2>
+        <p>
+          Portfolio projects designed to demonstrate network engineering,
+          automation, observability, security, and infrastructure
+          problem-solving.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- FLAGSHIP -->
+
+        <article class="project-card featured">
+
+          <div class="project-number">01 / FLAGSHIP PROJECT</div>
+
+          <h3>
+            Network Automation & Infrastructure Operations Platform
+          </h3>
+
+          <p>
+            Python-based NetOps platform designed around device inventory,
+            configuration backup, compliance validation, controlled
+            changes, pre-change validation, post-change verification,
+            reporting, and multi-vendor infrastructure operations.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Netmiko</span>
+            <span class="tag">NAPALM</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">Multi-Vendor</span>
+            <span class="tag">Network Automation</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Chandlert-web/network-automation-platform"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project →
+          </a>
+
+        </article>
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+          <div class="project-number">02</div>
+
+          <h3>
+            Network Observability & Incident Intelligence
+          </h3>
+
+          <p>
+            Engineering platform focused on network health,
+            availability monitoring, event collection, troubleshooting
+            workflows, and incident intelligence.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">SNMP</span>
+            <span class="tag">ICMP</span>
+            <span class="tag">Incident Response</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Chandlert-web/Monitoring"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project →
+          </a>
+
+        </article>
+
+        <!-- PROJECT 3 -->
+
+        <article class="project-card">
+
+          <div class="project-number">03</div>
+
+          <h3>
+            Zero Trust Network Security Automation
+          </h3>
+
+          <p>
+            Segmentation and access-control engineering project focused
+            on Zero Trust principles, least privilege, policy validation,
+            and controlled network access.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Zero Trust</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">Access Control</span>
+            <span class="tag">Security</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Chandlert-web/Zero-Trust"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project →
+          </a>
+
+        </article>
+
+        <!-- PROJECT 4 -->
+
+        <article class="project-card">
+
+          <div class="project-number">04</div>
+
+          <h3>
+            Network Engineering Toolkit
+          </h3>
+
+          <p>
+            Reusable engineering utilities for subnetting, diagnostics,
+            network validation, configuration analysis, and common
+            network operations tasks.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">CLI</span>
+            <span class="tag">IPv4</span>
+            <span class="tag">Diagnostics</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Chandlert-web"
+            target="_blank"
+            rel="noopener"
+          >
+            View GitHub →
+          </a>
+
+        </article>
+
+        <!-- PROJECT 5 -->
+
+        <article class="project-card">
+
+          <div class="project-number">05</div>
+
+          <h3>
+            Enterprise Network Infrastructure Lab
+          </h3>
+
+          <p>
+            Enterprise topology demonstrating VLAN segmentation,
+            routing, switching, fault tolerance, addressing plans,
+            and Layer 2/Layer 3 troubleshooting.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">VLANs</span>
+            <span class="tag">Routing</span>
+            <span class="tag">Switching</span>
+            <span class="tag">Fault Tolerance</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Chandlert-web/enterprise-network-lab"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project →
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TROUBLESHOOTING -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Troubleshooting Methodology</div>
+        <h2>Structured. Layered. Evidence-driven.</h2>
+        <p>
+          A repeatable troubleshooting approach designed to isolate
+          faults, validate assumptions, and minimize service impact.
+        </p>
+      </div>
+
+      <div class="method-grid">
+
+        <div class="method-step">
+          <strong>01</strong>
+          <span>Define Impact</span>
+        </div>
+
+        <div class="method-step">
+          <strong>02</strong>
+          <span>Check Layer 1</span>
+        </div>
+
+        <div class="method-step">
+          <strong>03</strong>
+          <span>Validate Layer 2/3</span>
+        </div>
+
+        <div class="method-step">
+          <strong>04</strong>
+          <span>Isolate Fault</span>
+        </div>
+
+        <div class="method-step">
+          <strong>05</strong>
+          <span>Validate Resolution</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTING LABS -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Supporting Labs</div>
+        <h2>Additional network engineering work.</h2>
+        <p>
+          Supporting projects and labs that demonstrate foundational
+          networking knowledge and hands-on technical practice.
+        </p>
+      </div>
+
+      <div class="labs-list">
+
+        <div class="lab">
+          <strong>ARP / DHCP / DNS Networking Lab</strong>
+          <span>TCP/IP, ARP behavior, DHCP assignment, DNS resolution</span>
+        </div>
+
+        <div class="lab">
+          <strong>VLANs & Routing</strong>
+          <span>Segmentation, routing, switching, addressing</span>
+        </div>
+
+        <div class="lab">
+          <strong>Wireshark Network Analysis</strong>
+          <span>Packet analysis, traffic inspection, troubleshooting</span>
+        </div>
+
+        <div class="lab">
+          <strong>GPON / XGS-PON Study</strong>
+          <span>OLT, ONT, PON architecture, optical access networking</span>
+        </div>
+
+        <div class="lab">
+          <strong>Network Troubleshooting Lab</strong>
+          <span>Layer 1–3 troubleshooting and fault isolation</span>
+        </div>
+
+        <div class="lab">
+          <strong>PDC Network Operations Lab</strong>
+          <span>Network operations, infrastructure troubleshooting, documentation</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Education & Professional Development</div>
+        <h2>Engineering foundation.</h2>
+      </div>
+
+      <div class="education-grid">
+
+        <div class="education-card">
+          <h3>Trident University International</h3>
+          <p>
+            M.S. in Information Technology Management
+          </p>
+          <p>
+            Concentration: Information Assurance & Cybersecurity
+          </p>
+          <p class="highlight">
+            Expected December 2026
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h3>Seminole State College</h3>
+          <p>
+            B.S. in Information Systems Technology
+          </p>
+          <p>
+            Concentration: Programming
+          </p>
+          <p class="highlight">
+            Completed
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h3>Certifications</h3>
+          <p>
+            Juniper Networking / JNCIA — Professional Development
+          </p>
+          <p>
+            Cisco CCNA — In Progress
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h3>Technical Development</h3>
+          <p>
+            VMware — Professional Development
+          </p>
+          <p>
+            Network Infrastructure & Wireless Networking — Ongoing Development
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+
+  <section id="resume">
+    <div class="container">
+
+      <div class="resume-panel">
+
+        <div>
+          <div class="eyebrow">Professional Resume</div>
+
+          <h3>
+            Want the complete professional background?
+          </h3>
+
+          <p>
+            Download the current Network Engineer resume for a detailed
+            overview of experience, technical skills, education, and
+            selected engineering projects.
+          </p>
+        </div>
+
+        <a
+          href="resume/Chandler-Thomas-Network-Engineer-Resume.pdf"
+          class="button button-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Download Resume
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="eyebrow">Contact</div>
+
+      <h2>Let's connect.</h2>
+
+      <p>
+        Open to network engineering, network operations, infrastructure,
+        automation, and technical opportunities.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          href="https://github.com/Chandlert-web"
+          class="button button-secondary"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="tel:+14076395300"
+          class="button button-secondary"
+        >
+          407-639-5300
+        </a>
+
+        <a
+          href="resume/Chandler-Thomas-Network-Engineer-Resume.pdf"
+          class="button button-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Resume
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <div class="container footer-inner">
+    <div class="container">
       <span>© 2026 Chandler Thomas</span>
-      <span>Network Engineer • Network Operations • Infrastructure</span>
+      <span>Network Operations • Infrastructure • Engineering</span>
     </div>
   </footer>
+
 </body>
 </html>
