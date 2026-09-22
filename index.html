@@ -703,132 +703,149 @@
    ENGINEERING DECISION FRAMEWORK
    ========================================================= */
 
+/* =========================================================
+   ENGINEERING DECISION FRAMEWORK
+   ========================================================= */
+
 .engineering-framework {
+  padding: 110px 0;
   border-top: 1px solid var(--border);
 }
 
+.engineering-framework .section-header {
+  margin-bottom: 70px;
+}
+
+.engineering-framework .section-intro {
+  max-width: 680px;
+  margin-top: 20px;
+}
+
+
+/* FRAMEWORK LAYOUT */
+
 .engineering-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
+
+
+/* FRAMEWORK CARDS */
 
 .engineering-card {
   background: var(--background);
-  padding: 2.25rem;
-  min-height: 300px;
+  border: 1px solid var(--border);
+  padding: 42px;
 }
 
 .engineering-card-wide {
-  grid-column: 1 / -1;
   min-height: auto;
 }
 
 .engineering-card-number {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 10px;
   color: var(--accent);
-  letter-spacing: 0.12em;
-  margin-bottom: 2rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 28px;
 }
 
 .engineering-card-label {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 10px;
   color: var(--muted);
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
 }
 
 .engineering-card h3 {
-  font-size: 1.35rem;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.3;
   font-weight: 500;
-  line-height: 1.25;
-  margin: 0 0 2rem;
-  color: var(--text);
-}
-
-.engineering-card-content {
-  max-width: 100%;
+  letter-spacing: -0.02em;
 }
 
 
-/* INCIDENT FLOW */
+/* INCIDENT INVESTIGATION */
 
 .decision-flow {
-  display: flex;
-  align-items: stretch;
-  gap: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 42px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .decision-step {
-  flex: 1;
-  border: 1px solid var(--border);
-  padding: 1rem;
-  min-width: 0;
+  padding: 24px 26px;
+  border-right: 1px solid var(--border);
+}
+
+.decision-step:last-child {
+  border-right: none;
 }
 
 .decision-step span {
   display: block;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.65rem;
+  font-size: 10px;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 14px;
 }
 
 .decision-step strong {
   display: block;
-  font-size: 0.9rem;
+  font-size: 15px;
   font-weight: 500;
-  margin-bottom: 0.45rem;
+  margin-bottom: 7px;
 }
 
 .decision-step small {
   display: block;
   color: var(--muted);
-  font-size: 0.72rem;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .flow-arrow {
-  display: flex;
-  align-items: center;
-  color: var(--accent);
-  font-family: "IBM Plex Mono", monospace;
+  display: none;
 }
 
 
-/* NETWORK LAYER CHART */
+/* NETWORK ISOLATION */
 
 .layer-chart {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 18px;
+  margin-top: 42px;
+  max-width: 950px;
 }
 
 .layer-row {
   display: grid;
-  grid-template-columns: 45px 125px 1fr;
+  grid-template-columns: 50px 150px 1fr;
   align-items: center;
-  gap: 1rem;
+  gap: 18px;
 }
 
 .layer-name {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 10px;
   color: var(--accent);
+  letter-spacing: 0.08em;
 }
 
 .layer-description {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
+  font-size: 10px;
   color: var(--muted);
 }
 
 .layer-bar {
-  height: 6px;
+  height: 5px;
   background: var(--border);
   overflow: hidden;
 }
@@ -843,92 +860,136 @@
 /* OPERATIONAL WORKFLOW */
 
 .workflow {
-  display: flex;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 42px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .workflow-step {
-  flex: 1;
-  border: 1px solid var(--border);
-  padding: 1.25rem;
-  min-width: 0;
+  padding: 26px;
+  border-right: 1px solid var(--border);
+}
+
+.workflow-step:last-child {
+  border-right: none;
 }
 
 .workflow-step span {
   display: block;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.65rem;
+  font-size: 10px;
   color: var(--accent);
-  margin-bottom: 0.65rem;
+  margin-bottom: 14px;
 }
 
 .workflow-step strong {
   display: block;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.45rem;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
 
 .workflow-step small {
   display: block;
   color: var(--muted);
-  font-size: 0.7rem;
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .workflow-line {
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-  flex-shrink: 0;
+  display: none;
 }
 
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media (max-width: 900px) {
 
-  .engineering-grid {
-    grid-template-columns: 1fr;
+  .engineering-framework {
+    padding: 85px 0;
   }
 
-  .engineering-card-wide {
-    grid-column: auto;
+  .engineering-framework .section-header {
+    margin-bottom: 50px;
+  }
+
+  .engineering-card {
+    padding: 32px;
   }
 
   .decision-flow {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .flow-arrow {
-    justify-content: center;
-    transform: rotate(90deg);
+  .decision-step:nth-child(2) {
+    border-right: none;
+  }
+
+  .decision-step:nth-child(3),
+  .decision-step:nth-child(4) {
+    border-top: 1px solid var(--border);
   }
 
   .workflow {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
-  .workflow-line {
-    width: 1px;
-    height: 22px;
-    margin: 0 auto;
+  .workflow-step {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .workflow-step:last-child {
+    border-bottom: none;
   }
 
 }
 
+
+/* MOBILE */
+
 @media (max-width: 600px) {
 
+  .engineering-framework {
+    padding: 70px 0;
+  }
+
   .engineering-card {
-    padding: 1.5rem;
+    padding: 26px;
+  }
+
+  .engineering-card h3 {
+    font-size: 21px;
+  }
+
+  .decision-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-step {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .decision-step:last-child {
+    border-bottom: none;
+  }
+
+  .decision-step:nth-child(3),
+  .decision-step:nth-child(4) {
+    border-top: none;
   }
 
   .layer-row {
-    grid-template-columns: 38px 105px 1fr;
-    gap: 0.65rem;
+    grid-template-columns: 40px 105px 1fr;
+    gap: 12px;
+  }
+
+  .layer-description {
+    font-size: 9px;
   }
 
 }
