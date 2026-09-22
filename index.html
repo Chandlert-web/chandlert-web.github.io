@@ -707,289 +707,214 @@
    ENGINEERING DECISION FRAMEWORK
    ========================================================= */
 
-.engineering-framework {
-  padding: 110px 0;
+.engineering-thinking {
+  padding: 90px 0;
   border-top: 1px solid var(--border);
 }
 
-.engineering-framework .section-header {
-  margin-bottom: 70px;
+.engineering-thinking .section-header {
+  margin-bottom: 50px;
 }
 
-.engineering-framework .section-intro {
+.engineering-thinking .section-intro {
   max-width: 680px;
   margin-top: 20px;
 }
 
 
-/* FRAMEWORK LAYOUT */
+/* ENGINEERING PROCESS */
 
-.engineering-grid {
+.engineering-process {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-
-/* FRAMEWORK CARDS */
-
-.engineering-card {
-  background: var(--background);
-  border: 1px solid var(--border);
-  padding: 42px;
-}
-
-.engineering-card-wide {
-  min-height: auto;
-}
-
-.engineering-card-number {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  color: var(--accent);
-  letter-spacing: 0.14em;
-  margin-bottom: 28px;
-}
-
-.engineering-card-label {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.16em;
-  margin-bottom: 12px;
-}
-
-.engineering-card h3 {
-  margin: 0;
-  font-size: 24px;
-  line-height: 1.3;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-
-/* INCIDENT INVESTIGATION */
-
-.decision-flow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 42px;
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.decision-step {
-  padding: 24px 26px;
+.process-step {
+  padding: 28px 24px;
   border-right: 1px solid var(--border);
 }
 
-.decision-step:last-child {
+.process-step:last-child {
   border-right: none;
 }
 
-.decision-step span {
+.process-step span {
   display: block;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--mono);
   font-size: 10px;
   color: var(--accent);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
-.decision-step strong {
+.process-step strong {
   display: block;
-  font-size: 15px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
   font-weight: 500;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
-.decision-step small {
+.process-step small {
   display: block;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.5;
-}
-
-.flow-arrow {
-  display: none;
+  line-height: 1.55;
 }
 
 
-/* NETWORK ISOLATION */
+/* DIAGNOSTIC MODEL */
 
-.layer-chart {
+.diagnostic-model {
+  margin-top: 40px;
+  border: 1px solid var(--border);
+}
+
+.diagnostic-header {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-top: 42px;
-  max-width: 950px;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
 }
 
-.layer-row {
+.diagnostic-row {
   display: grid;
-  grid-template-columns: 50px 150px 1fr;
+  grid-template-columns: 170px 1fr 280px;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
+
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
 }
 
-.layer-name {
-  font-family: "IBM Plex Mono", monospace;
+.diagnostic-row:last-child {
+  border-bottom: none;
+}
+
+.diagnostic-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.diagnostic-label strong {
+  font-family: var(--mono);
   font-size: 10px;
   color: var(--accent);
-  letter-spacing: 0.08em;
 }
 
-.layer-description {
-  font-family: "IBM Plex Mono", monospace;
+.diagnostic-label span {
+  font-family: var(--mono);
   font-size: 10px;
   color: var(--muted);
 }
 
-.layer-bar {
-  height: 5px;
+.diagnostic-track {
+  height: 4px;
   background: var(--border);
-  overflow: hidden;
 }
 
-.layer-bar span {
-  display: block;
+.diagnostic-fill {
   height: 100%;
   background: var(--accent);
 }
 
-
-/* OPERATIONAL WORKFLOW */
-
-.workflow {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin-top: 42px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+.diagnostic-fill.physical {
+  width: 28%;
 }
 
-.workflow-step {
-  padding: 26px;
-  border-right: 1px solid var(--border);
+.diagnostic-fill.switching {
+  width: 52%;
 }
 
-.workflow-step:last-child {
-  border-right: none;
+.diagnostic-fill.routing {
+  width: 76%;
 }
 
-.workflow-step span {
-  display: block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  color: var(--accent);
-  margin-bottom: 14px;
+.diagnostic-fill.services {
+  width: 94%;
 }
 
-.workflow-step strong {
-  display: block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
-}
-
-.workflow-step small {
-  display: block;
+.diagnostic-description {
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-.workflow-line {
-  display: none;
+  font-size: 12px;
 }
 
 
-/* TABLET */
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
 
-  .engineering-framework {
-    padding: 85px 0;
-  }
-
-  .engineering-framework .section-header {
-    margin-bottom: 50px;
-  }
-
-  .engineering-card {
-    padding: 32px;
-  }
-
-  .decision-flow {
+  .engineering-process {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .decision-step:nth-child(2) {
+  .process-step:nth-child(2),
+  .process-step:nth-child(4) {
     border-right: none;
   }
 
-  .decision-step:nth-child(3),
-  .decision-step:nth-child(4) {
+  .process-step:nth-child(n + 3) {
     border-top: 1px solid var(--border);
   }
 
-  .workflow {
-    grid-template-columns: 1fr;
+  .diagnostic-row {
+    grid-template-columns: 150px 1fr;
   }
 
-  .workflow-step {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .workflow-step:last-child {
-    border-bottom: none;
+  .diagnostic-description {
+    grid-column: 2;
   }
 
 }
 
 
-/* MOBILE */
-
 @media (max-width: 600px) {
 
-  .engineering-framework {
+  .engineering-thinking {
     padding: 70px 0;
   }
 
-  .engineering-card {
-    padding: 26px;
-  }
-
-  .engineering-card h3 {
-    font-size: 21px;
-  }
-
-  .decision-flow {
+  .engineering-process {
     grid-template-columns: 1fr;
   }
 
-  .decision-step {
+  .process-step {
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
 
-  .decision-step:last-child {
-    border-bottom: none;
-  }
-
-  .decision-step:nth-child(3),
-  .decision-step:nth-child(4) {
+  .process-step:nth-child(n + 3) {
     border-top: none;
   }
 
-  .layer-row {
-    grid-template-columns: 40px 105px 1fr;
-    gap: 12px;
+  .process-step:last-child {
+    border-bottom: none;
   }
 
-  .layer-description {
-    font-size: 9px;
+  .diagnostic-header {
+    display: block;
+    line-height: 1.8;
+  }
+
+  .diagnostic-row {
+    display: block;
+    padding: 16px;
+  }
+
+  .diagnostic-label {
+    margin-bottom: 12px;
+  }
+
+  .diagnostic-track {
+    margin-bottom: 12px;
   }
 
 }
@@ -1493,7 +1418,7 @@
 
   <!-- ENGINEERING DECISION FRAMEWORK -->
 
-<section class="section engineering-framework" id="engineering-framework">
+<section class="engineering-thinking" id="engineering-thinking">
 
   <div class="section-header">
 
@@ -1507,203 +1432,191 @@
     </h2>
 
     <p class="section-intro">
-      A structured approach to network troubleshooting, service
-      isolation, validation, remediation, and operational verification.
+      A structured approach to diagnosing network incidents,
+      isolating failure domains, validating evidence, and
+      restoring service through controlled remediation.
     </p>
 
   </div>
 
-  <div class="engineering-grid">
 
-    <!-- INCIDENT INVESTIGATION -->
+  <div class="engineering-process">
 
-    <div class="engineering-card">
+    <div class="process-step">
 
-      <div class="engineering-card-number">
-        01
-      </div>
+      <span>01</span>
 
-      <div class="engineering-card-content">
+      <strong>OBSERVE</strong>
 
-        <div class="engineering-card-label">
-          INCIDENT INVESTIGATION
-        </div>
-
-        <h3>
-          Symptoms → Evidence → Root Cause
-        </h3>
-
-        <div class="decision-flow">
-
-          <div class="decision-step">
-            <span>01</span>
-            <strong>Observe</strong>
-            <small>Define the user impact</small>
-          </div>
-
-          <div class="flow-arrow">→</div>
-
-          <div class="decision-step">
-            <span>02</span>
-            <strong>Scope</strong>
-            <small>Determine affected systems</small>
-          </div>
-
-          <div class="flow-arrow">→</div>
-
-          <div class="decision-step">
-            <span>03</span>
-            <strong>Isolate</strong>
-            <small>Identify the failing layer</small>
-          </div>
-
-          <div class="flow-arrow">→</div>
-
-          <div class="decision-step">
-            <span>04</span>
-            <strong>Validate</strong>
-            <small>Collect supporting evidence</small>
-          </div>
-
-        </div>
-
-      </div>
+      <small>
+        Define the symptoms and affected users, systems, or services.
+      </small>
 
     </div>
 
 
-    <!-- NETWORK LAYERS -->
+    <div class="process-step">
 
-    <div class="engineering-card">
+      <span>02</span>
 
-      <div class="engineering-card-number">
-        02
-      </div>
+      <strong>ISOLATE</strong>
 
-      <div class="engineering-card-content">
-
-        <div class="engineering-card-label">
-          NETWORK ISOLATION
-        </div>
-
-        <h3>
-          Troubleshoot From Layer to Service
-        </h3>
-
-        <div class="layer-chart">
-
-          <div class="layer-row">
-            <span class="layer-name">L1</span>
-            <span class="layer-description">Physical</span>
-            <div class="layer-bar">
-              <span style="width: 22%;"></span>
-            </div>
-          </div>
-
-          <div class="layer-row">
-            <span class="layer-name">L2</span>
-            <span class="layer-description">Switching</span>
-            <div class="layer-bar">
-              <span style="width: 42%;"></span>
-            </div>
-          </div>
-
-          <div class="layer-row">
-            <span class="layer-name">L3</span>
-            <span class="layer-description">Routing</span>
-            <div class="layer-bar">
-              <span style="width: 62%;"></span>
-            </div>
-          </div>
-
-          <div class="layer-row">
-            <span class="layer-name">L4</span>
-            <span class="layer-description">Transport</span>
-            <div class="layer-bar">
-              <span style="width: 78%;"></span>
-            </div>
-          </div>
-
-          <div class="layer-row">
-            <span class="layer-name">SVC</span>
-            <span class="layer-description">DHCP / DNS / ARP</span>
-            <div class="layer-bar">
-              <span style="width: 92%;"></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
+      <small>
+        Determine where the failure exists across the network stack.
+      </small>
 
     </div>
 
-    <!-- ENGINEERING WORKFLOW -->
 
-    <div class="engineering-card engineering-card-wide">
+    <div class="process-step">
 
-      <div class="engineering-card-number">
-        03
-      </div>
+      <span>03</span>
 
-      <div class="engineering-card-content">
+      <strong>VALIDATE</strong>
 
-        <div class="engineering-card-label">
-          OPERATIONAL WORKFLOW
-        </div>
+      <small>
+        Collect evidence and confirm the suspected failure domain.
+      </small>
 
-        <h3>
-          Controlled Change &amp; Verification
-        </h3>
+    </div>
 
-        <div class="workflow">
 
-          <div class="workflow-step">
-            <span>01</span>
-            <strong>DETECT</strong>
-            <small>Identify the anomaly</small>
-          </div>
+    <div class="process-step">
 
-          <div class="workflow-line"></div>
+      <span>04</span>
 
-          <div class="workflow-step">
-            <span>02</span>
-            <strong>ISOLATE</strong>
-            <small>Determine the failure domain</small>
-          </div>
+      <strong>CORRECT</strong>
 
-          <div class="workflow-line"></div>
+      <small>
+        Apply the smallest controlled change required to remediate.
+      </small>
 
-          <div class="workflow-step">
-            <span>03</span>
-            <strong>VALIDATE</strong>
-            <small>Confirm the hypothesis</small>
-          </div>
+    </div>
 
-          <div class="workflow-line"></div>
 
-          <div class="workflow-step">
-            <span>04</span>
-            <strong>CORRECT</strong>
-            <small>Apply controlled remediation</small>
-          </div>
+    <div class="process-step">
 
-          <div class="workflow-line"></div>
+      <span>05</span>
 
-          <div class="workflow-step">
-            <span>05</span>
-            <strong>VERIFY</strong>
-            <small>Confirm service restoration</small>
-          </div>
+      <strong>VERIFY</strong>
 
-        </div>
-
-      </div>
+      <small>
+        Confirm service restoration and validate the final state.
+      </small>
 
     </div>
 
   </div>
 
+
+  <div class="diagnostic-model">
+
+    <div class="diagnostic-header">
+
+      <span>
+        DIAGNOSTIC MODEL
+      </span>
+
+      <span>
+        FAILURE DOMAIN ISOLATION
+      </span>
+
+    </div>
+
+
+    <div class="diagnostic-row">
+
+      <div class="diagnostic-label">
+
+        <strong>L1</strong>
+
+        <span>PHYSICAL</span>
+
+      </div>
+
+      <div class="diagnostic-track">
+
+        <div class="diagnostic-fill physical"></div>
+
+      </div>
+
+      <div class="diagnostic-description">
+        Links / optics / physical connectivity
+      </div>
+
+    </div>
+
+
+    <div class="diagnostic-row">
+
+      <div class="diagnostic-label">
+
+        <strong>L2</strong>
+
+        <span>SWITCHING</span>
+
+      </div>
+
+      <div class="diagnostic-track">
+
+        <div class="diagnostic-fill switching"></div>
+
+      </div>
+
+      <div class="diagnostic-description">
+        VLANs / MAC / ARP / switching paths
+      </div>
+
+    </div>
+
+
+    <div class="diagnostic-row">
+
+      <div class="diagnostic-label">
+
+        <strong>L3</strong>
+
+        <span>ROUTING</span>
+
+      </div>
+
+      <div class="diagnostic-track">
+
+        <div class="diagnostic-fill routing"></div>
+
+      </div>
+
+      <div class="diagnostic-description">
+        IP / gateways / routes / reachability
+      </div>
+
+    </div>
+
+
+    <div class="diagnostic-row">
+
+      <div class="diagnostic-label">
+
+        <strong>SVC</strong>
+
+        <span>NETWORK SERVICES</span>
+
+      </div>
+
+      <div class="diagnostic-track">
+
+        <div class="diagnostic-fill services"></div>
+
+      </div>
+
+      <div class="diagnostic-description">
+        DHCP / DNS / authentication / application access
+      </div>
+
+    </div>
+
+  </div>
+  
 </section>
 
   <!-- =======================================================
