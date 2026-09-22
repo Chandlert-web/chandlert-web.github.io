@@ -699,7 +699,239 @@
       }
 
     }
+/* =========================================================
+   ENGINEERING DECISION FRAMEWORK
+   ========================================================= */
 
+.engineering-framework {
+  border-top: 1px solid var(--border);
+}
+
+.engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.engineering-card {
+  background: var(--background);
+  padding: 2.25rem;
+  min-height: 300px;
+}
+
+.engineering-card-wide {
+  grid-column: 1 / -1;
+  min-height: auto;
+}
+
+.engineering-card-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+
+.engineering-card-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.engineering-card h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+  color: var(--text);
+}
+
+.engineering-card-content {
+  max-width: 100%;
+}
+
+
+/* INCIDENT FLOW */
+
+.decision-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.65rem;
+}
+
+.decision-step {
+  flex: 1;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  min-width: 0;
+}
+
+.decision-step span {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.decision-step strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.45rem;
+}
+
+.decision-step small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+
+/* NETWORK LAYER CHART */
+
+.layer-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.layer-row {
+  display: grid;
+  grid-template-columns: 45px 125px 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.layer-name {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.layer-description {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.layer-bar {
+  height: 6px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.layer-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+
+/* OPERATIONAL WORKFLOW */
+
+.workflow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.workflow-step {
+  flex: 1;
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.workflow-step span {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+}
+
+.workflow-step strong {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+}
+
+.workflow-step small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.workflow-line {
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .engineering-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .engineering-card-wide {
+    grid-column: auto;
+  }
+
+  .decision-flow {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  .workflow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .workflow-line {
+    width: 1px;
+    height: 22px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .engineering-card {
+    padding: 1.5rem;
+  }
+
+  .layer-row {
+    grid-template-columns: 38px 105px 1fr;
+    gap: 0.65rem;
+  }
+
+}
   </style>
 </head>
 
@@ -1198,6 +1430,220 @@
 
   </section>
 
+  <!-- ENGINEERING DECISION FRAMEWORK -->
+
+<section class="section engineering-framework" id="engineering-framework">
+
+  <div class="section-header">
+
+    <div class="section-index">
+      04 / ENGINEERING THINKING
+    </div>
+
+    <h2 class="section-title">
+      ENGINEERING<br>
+      DECISION FRAMEWORK
+    </h2>
+
+    <p class="section-intro">
+      A structured approach to network troubleshooting, service
+      isolation, validation, remediation, and operational verification.
+    </p>
+
+  </div>
+
+  <div class="engineering-grid">
+
+    <!-- INCIDENT INVESTIGATION -->
+
+    <div class="engineering-card">
+
+      <div class="engineering-card-number">
+        01
+      </div>
+
+      <div class="engineering-card-content">
+
+        <div class="engineering-card-label">
+          INCIDENT INVESTIGATION
+        </div>
+
+        <h3>
+          Symptoms → Evidence → Root Cause
+        </h3>
+
+        <div class="decision-flow">
+
+          <div class="decision-step">
+            <span>01</span>
+            <strong>Observe</strong>
+            <small>Define the user impact</small>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="decision-step">
+            <span>02</span>
+            <strong>Scope</strong>
+            <small>Determine affected systems</small>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="decision-step">
+            <span>03</span>
+            <strong>Isolate</strong>
+            <small>Identify the failing layer</small>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="decision-step">
+            <span>04</span>
+            <strong>Validate</strong>
+            <small>Collect supporting evidence</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- NETWORK LAYERS -->
+
+    <div class="engineering-card">
+
+      <div class="engineering-card-number">
+        02
+      </div>
+
+      <div class="engineering-card-content">
+
+        <div class="engineering-card-label">
+          NETWORK ISOLATION
+        </div>
+
+        <h3>
+          Troubleshoot From Layer to Service
+        </h3>
+
+        <div class="layer-chart">
+
+          <div class="layer-row">
+            <span class="layer-name">L1</span>
+            <span class="layer-description">Physical</span>
+            <div class="layer-bar">
+              <span style="width: 22%;"></span>
+            </div>
+          </div>
+
+          <div class="layer-row">
+            <span class="layer-name">L2</span>
+            <span class="layer-description">Switching</span>
+            <div class="layer-bar">
+              <span style="width: 42%;"></span>
+            </div>
+          </div>
+
+          <div class="layer-row">
+            <span class="layer-name">L3</span>
+            <span class="layer-description">Routing</span>
+            <div class="layer-bar">
+              <span style="width: 62%;"></span>
+            </div>
+          </div>
+
+          <div class="layer-row">
+            <span class="layer-name">L4</span>
+            <span class="layer-description">Transport</span>
+            <div class="layer-bar">
+              <span style="width: 78%;"></span>
+            </div>
+          </div>
+
+          <div class="layer-row">
+            <span class="layer-name">SVC</span>
+            <span class="layer-description">DHCP / DNS / ARP</span>
+            <div class="layer-bar">
+              <span style="width: 92%;"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ENGINEERING WORKFLOW -->
+
+    <div class="engineering-card engineering-card-wide">
+
+      <div class="engineering-card-number">
+        03
+      </div>
+
+      <div class="engineering-card-content">
+
+        <div class="engineering-card-label">
+          OPERATIONAL WORKFLOW
+        </div>
+
+        <h3>
+          Controlled Change &amp; Verification
+        </h3>
+
+        <div class="workflow">
+
+          <div class="workflow-step">
+            <span>01</span>
+            <strong>DETECT</strong>
+            <small>Identify the anomaly</small>
+          </div>
+
+          <div class="workflow-line"></div>
+
+          <div class="workflow-step">
+            <span>02</span>
+            <strong>ISOLATE</strong>
+            <small>Determine the failure domain</small>
+          </div>
+
+          <div class="workflow-line"></div>
+
+          <div class="workflow-step">
+            <span>03</span>
+            <strong>VALIDATE</strong>
+            <small>Confirm the hypothesis</small>
+          </div>
+
+          <div class="workflow-line"></div>
+
+          <div class="workflow-step">
+            <span>04</span>
+            <strong>CORRECT</strong>
+            <small>Apply controlled remediation</small>
+          </div>
+
+          <div class="workflow-line"></div>
+
+          <div class="workflow-step">
+            <span>05</span>
+            <strong>VERIFY</strong>
+            <small>Confirm service restoration</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- =======================================================
        TROUBLESHOOTING
